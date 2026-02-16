@@ -1,0 +1,39 @@
+@model IReadOnlyList<EventSystem.Services.Models.RegistrationDto>
+@{
+    ViewData["Title"] = "My Registrations";
+}
+
+<h2>My Registrations</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">No registrations yet.</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Event start</th>
+                <th>Registered at</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.EventTitle</td>
+                <td>@r.EventStartUtc.ToString("u")</td>
+                <td>@r.RegisteredAtUtc.ToString("u")</td>
+                <td>@r.Status</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-primary" asp-controller="Events" asp-action="Details" asp-route-id="@r.EventId">Open</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
