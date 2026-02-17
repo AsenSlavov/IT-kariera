@@ -1,0 +1,40 @@
+@model IReadOnlyList<EventSystem.Services.Models.RegistrationDto>
+@{
+    ViewData["Title"] = "Registrations";
+}
+
+<h2>Registrations</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">No registrations found.</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Registered at</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.RegisteredAtUtc.ToString("u")</td>
+                <td>@r.Status</td>
+                <td class="text-end">
+                    <form asp-action="Approve" method="post" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@r.Id" />
+                        <input type="hidden" name="eventId" value="@r.EventId" />
+                        <button class="btn btn-sm btn-outline-success" type="submit">Approve</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

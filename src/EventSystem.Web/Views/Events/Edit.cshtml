@@ -1,0 +1,17 @@
+@model EventSystem.Web.ViewModels.EventUpsertViewModel
+@{
+    ViewData["Title"] = "Edit Event";
+}
+
+<h2>Edit Event</h2>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <partial name="_Form" model="Model" />
+    <button class="btn btn-primary" type="submit">Save</button>
+    <a class="btn btn-secondary" asp-action="Details" asp-route-id="@Model.Id">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

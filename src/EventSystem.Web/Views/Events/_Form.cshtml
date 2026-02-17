@@ -1,0 +1,87 @@
+@model EventSystem.Web.ViewModels.EventUpsertViewModel
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<div class="mb-3">
+    <label asp-for="Title" class="form-label"></label>
+    <input asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Description" class="form-label"></label>
+    <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+    <span asp-validation-for="Description" class="text-danger"></span>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label asp-for="StartUtc" class="form-label"></label>
+        <input asp-for="StartUtc" type="datetime-local" class="form-control" />
+        <span asp-validation-for="StartUtc" class="text-danger"></span>
+        <div class="form-text">Input is treated as UTC.</div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label asp-for="EndUtc" class="form-label"></label>
+        <input asp-for="EndUtc" type="datetime-local" class="form-control" />
+        <span asp-validation-for="EndUtc" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label asp-for="VenueId" class="form-label"></label>
+        <select asp-for="VenueId" class="form-select">
+            <option value="">-- select venue --</option>
+            @foreach (var v in Model.Venues)
+            {
+                <option value="@v.Id">@v.Name</option>
+            }
+        </select>
+        <span asp-validation-for="VenueId" class="text-danger"></span>
+    </div>
+    <div class="col-md-3 mb-3">
+        <label asp-for="Capacity" class="form-label"></label>
+        <input asp-for="Capacity" class="form-control" />
+        <span asp-validation-for="Capacity" class="text-danger"></span>
+    </div>
+    <div class="col-md-3 mb-3">
+        <label asp-for="IsPublic" class="form-label"></label>
+        <div class="form-check">
+            <input asp-for="IsPublic" class="form-check-input" />
+            <label class="form-check-label" asp-for="IsPublic">Public</label>
+        </div>
+    </div>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Categories</label>
+    <div class="row">
+        @foreach (var c in Model.Categories)
+        {
+            <div class="col-md-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="CategoryIds" value="@c.Id"
+                           checked="@(Model.CategoryIds.Contains(c.Id))" />
+                    <label class="form-check-label">@c.Name</label>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Tags</label>
+    <div class="row">
+        @foreach (var t in Model.Tags)
+        {
+            <div class="col-md-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="TagIds" value="@t.Id"
+                           checked="@(Model.TagIds.Contains(t.Id))" />
+                    <label class="form-check-label">@t.Name</label>
+                </div>
+            </div>
+        }
+    </div>
+</div>

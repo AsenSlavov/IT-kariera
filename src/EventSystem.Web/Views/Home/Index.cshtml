@@ -1,0 +1,57 @@
+@model EventSystem.Web.ViewModels.EventSearchViewModel
+@{
+    ViewData["Title"] = "Events";
+}
+
+<div class="row mb-3">
+    <div class="col-12">
+        <form method="get" class="row g-2">
+            <div class="col-md-3">
+                <input class="form-control" name="Search" value="@Model.Search" placeholder="Search by title..." />
+            </div>
+            <div class="col-md-3">
+                <input class="form-control" name="City" value="@Model.City" placeholder="City..." />
+            </div>
+            <div class="col-md-3">
+                <select class="form-select" name="CategoryId">
+                    <option value="">All categories</option>
+                    @foreach (var c in Model.Categories)
+                    {
+                        <option value="@c.Id" selected="@(Model.CategoryId == c.Id)">@c.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select" name="Sort">
+                    <option value="new" selected="@(Model.Sort == "new")">Newest</option>
+                    <option value="soon" selected="@(Model.Sort == "soon")">Soonest</option>
+                    <option value="popular" selected="@(Model.Sort == "popular")">Most popular</option>
+                </select>
+            </div>
+            <div class="col-md-1 d-grid">
+                <button class="btn btn-primary" type="submit">Go</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (!Model.Events.Any())
+{
+    <div class="alert alert-info">No events found.</div>
+}
+else
+{
+    <div class="list-group">
+        @foreach (var e in Model.Events)
+        {
+            <a class="list-group-item list-group-item-action" asp-controller="Events" asp-action="Details" asp-route-id="@e.Id">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">@e.Title</h5>
+                    <small>@e.StartUtc.ToString("u")</small>
+                </div>
+                <p class="mb-1">@e.City — @e.VenueName</p>
+                <small>Seats: @e.RegisteredCount / @e.Capacity</small>
+            </a>
+        }
+    </div>
+}

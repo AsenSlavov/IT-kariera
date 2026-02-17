@@ -1,0 +1,39 @@
+@model IReadOnlyList<EventSystem.Services.Models.EventListItemDto>
+@{
+    ViewData["Title"] = "My Events";
+}
+
+<h2>My Events (Organizer)</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">You have not created any events yet.</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>When</th>
+                <th>Where</th>
+                <th>Seats</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var e in Model)
+        {
+            <tr>
+                <td>@e.Title</td>
+                <td>@e.StartUtc.ToString("u")</td>
+                <td>@e.City — @e.VenueName</td>
+                <td>@e.RegisteredCount / @e.Capacity</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-primary" asp-controller="Events" asp-action="Details" asp-route-id="@e.Id">Open</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
