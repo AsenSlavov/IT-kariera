@@ -1,0 +1,15 @@
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\bin\Debug\net8.0\EventSystem.Services.deps.json
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\bin\Debug\net8.0\EventSystem.Services.dll
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\bin\Debug\net8.0\EventSystem.Services.pdb
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\bin\Debug\net8.0\EventSystem.Data.dll
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\bin\Debug\net8.0\EventSystem.Data.pdb
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\obj\Debug\net8.0\EventSystem.Services.csproj.AssemblyReference.cache
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\obj\Debug\net8.0\EventSystem.Services.GeneratedMSBuildEditorConfig.editorconfig
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\obj\Debug\net8.0\EventSystem.Services.AssemblyInfoInputs.cache
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\obj\Debug\net8.0\EventSystem.Services.AssemblyInfo.cs
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\obj\Debug\net8.0\EventSystem.Services.csproj.CoreCompileInputs.cache
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\obj\Debug\net8.0\EventSys.99CAD974.Up2Date
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\obj\Debug\net8.0\EventSystem.Services.dll
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\obj\Debug\net8.0\refint\EventSystem.Services.dll
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\obj\Debug\net8.0\EventSystem.Services.pdb
+E:\Нова папка (2)\IT кариера\izpit 12\project CHATGPT\src\EventSystem.Services\obj\Debug\net8.0\ref\EventSystem.Services.dll
